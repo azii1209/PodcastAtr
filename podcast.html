@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast Suara Remaja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="overlay"></div>
+    <div class="header-content">
+      <h1>🎙️ Podcast Suara Remaja</h1>
+      <p>"Suara Kami, Cerita Kita"</p>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about fade-in">
+    <h2>👥 Nama Kelompok</h2>
+    <p><strong>Kelompok 5 </strong></p>
+  </section>
+
+  <!-- MEMBERS -->
+  <section class="members fade-in">
+    <h2>Anggota Kelompok</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>M.Aldwyn Bryandio</h3>
+        <p>Host</p>
+      </div>
+      <div class="card">
+        <h3>Ariyo Hamka Ibrahim</h3>
+        <p>Editor</p>
+      </div>
+      <div class="card">
+        <h3>Athar Harrazi</h3>
+        <p>Editor</p>
+      </div>
+      <div class="card">
+        <h3>M.Rasya Ardiansyah & Junior Toriq Wijaya</h3>
+        <p>Penulis Naskah</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="player fade-in">
+    <h2>🎬 Tonton Podcast Kami</h2>
+    <a href="https://drive.google.com/file/d/1OVIQY7MS7fKfeF1QB258KoKLBEAqzCo8/view?usp=drivesdk" 
+       target="_blank" class="btn">
+      🔗 Tonton di Google Drive
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Podcast Suara Nusantara | Dibuat dengan ❤ oleh Kelompok Kami</p>
+  </footer>
+
+  <script>
+    // Animasi fade-in saat scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
